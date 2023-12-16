@@ -27,3 +27,50 @@ const images = [
     alt: 'Zebras on Zebra',
   },
 ];
+
+const list = document.querySelector(".gallery");
+
+// 1-st var
+
+const markup = images
+  .map(({url, alt}) => ` <li><img src="${url}" alt="${alt}" width = "360" height = "300" /></li>`)
+  .join("");
+
+list.insertAdjacentHTML("beforeend", markup);
+
+// 2-nd var
+
+// const createList = (arr) => {
+//   return arr.map(({ url, alt }) => {
+//     const li = document.createElement('li');
+//     const img = document.createElement('img');
+//     img.src = url;
+//     img.alt = alt;
+//     img.width = 360;
+//     img.height = 300;
+//     li.append(img);
+//     return li;
+//   });
+// };
+
+// const markup = createList(images);
+
+// list.append(...markup);
+
+// 3-rd var
+
+// const markup = images.reduce(
+//   (acc, img) =>
+//     (acc += `<li><img src="${img.url}" alt="${img.alt}" width = "360" height = "300"></li>`),
+//   ''
+// );
+
+// list.insertAdjacentHTML('beforeend', markup);
+
+// 4-th var
+
+// const markup = images
+//   .map(({url, alt}) => `<li><img src="${url}" alt="${alt}" width = "360" height = "300"></li>`)
+//   .join("");
+  
+// list.innerHTML = markup;
